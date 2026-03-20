@@ -1,4 +1,4 @@
 public abstract class Category extends Product {
-    private category;
+    private category
     
 }
