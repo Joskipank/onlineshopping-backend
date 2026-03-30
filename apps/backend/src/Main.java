@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Product product1 = new Product("xxx", 322.9, "");
-        System.out.println(product1.getPrice() + " " + product1.getId() + " " + product1.getTitle());
 
+        Category product1 = new Electronic("Телефон", 55);
+        Category product2 = new Electronic("Ноутбук", 1200);
+
+        Category.printCategory();
     }
 }
-
-//
