@@ -1,24 +1,30 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
+import java.util.Objects;
 
 public abstract class Category {
-    private static int counter = 0;
+    private static List<String> subCategory = new ArrayList<>();
+    protected static HashMap<String, Double> category = new HashMap<>();
 
-    private int id;
-    private String title;
-    private double price;
-    private static HashMap<Integer, String> category = new HashMap<>();
-
-    public Category(String title, double price) {
-        this.id = ++counter;
-        this.title = title;
-        this.price = price;
-
-        category.put(this.id, title);
+    public static void addSubCategory(String name){
+        subCategory.add(name);
     }
 
+    public static void addCattegory(String title, double price){
+        category.put(title, price);
+    }
+
+
     public static void printCategory() {
-        for (Integer key : category.keySet()) {
+        for (String key : category.keySet()) {
             System.out.println(key + ": " + category.get(key));
+        }
+    }
+
+    public static void showOwnCattegory(){
+        for(String el : subCategory){
+            System.out.println(el);
         }
     }
 }
